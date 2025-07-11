@@ -29,21 +29,21 @@ export const Home = () => {
 										<Link to={`/editContact/${element.id}`} className="btn btn-warning me-2">
 											<i className="bi bi-pencil-fill"></i>
 										</Link>
-										<button className="btn btn-danger me-2" data-bs-toggle="modal" data-bs-target="#deleteContact"><i className="bi bi-trash3-fill"></i></button>
+										<button className="btn btn-danger me-2" data-bs-toggle="modal" data-bs-target={`#deleteContact${element.id}`}><i className="bi bi-trash3-fill"></i></button>
 										
-										<div class="modal fade" id="deleteContact" tabindex="-1" aria-labelledby="deleteContactLabel" aria-hidden="true">
-											<div class="modal-dialog">
-												<div class="modal-content">
-													<div class="modal-header">
-														<h1 class="modal-title fs-5" id="deleteContactLabel">Are you sure?</h1>
-														<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										<div className="modal fade" id={`deleteContact${element.id}`} tabIndex="-1" aria-labelledby={`deleteContact${element.id}Label`} aria-hidden="true">
+											<div className="modal-dialog">
+												<div className="modal-content">
+													<div className="modal-header">
+														<h1 className="modal-title fs-5" id={`deleteContact${element.id}Label`}>Are you sure?</h1>
+														<button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 													</div>
-													<div class="modal-body">
+													<div className="modal-body">
 														You are about to delete {element.name}. Proceed?
 													</div>
-													<div class="modal-footer d-flex justify-content-between">
-														<button type="button" onClick={()=>{manageContacts("delete",null,element.id)}} data-bs-dismiss="modal" class="btn btn-danger">Confirm</button>
-														<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+													<div className="modal-footer d-flex justify-content-between">
+														<button type="button" onClick={()=>{manageContacts("delete",null,element.id)}} data-bs-dismiss="modal" className="btn btn-danger">Confirm</button>
+														<button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
 													</div>
 												</div>
 											</div>
